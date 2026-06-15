@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Coaster{% endblock %}
+
+{% block body %}
+    <h1>Coaster</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ coaster.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ coaster.name }}</td>
+            </tr>
+            <tr>
+                <th>Capacity</th>
+                <td>{{ coaster.capacity }}</td>
+            </tr>
+            <tr>
+                <th>Speed</th>
+                <td>{{ coaster.speed }}</td>
+            </tr>
+            <tr>
+                <th>Return</th>
+                <td>{{ coaster.return }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_coaster_index') }}">back to list</a>
+
+    <a href="{{ path('app_coaster_edit', {'id': coaster.id}) }}">edit</a>
+
+    {{ include('coaster/_delete_form.html.twig') }}
+{% endblock %}

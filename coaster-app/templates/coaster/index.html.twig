@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Coaster index{% endblock %}
+
+{% block body %}
+    <h1>Coaster index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Capacity</th>
+                <th>Speed</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for coaster in coasters %}
+            <tr>
+                <td>{{ coaster.id }}</td>
+                <td>{{ coaster.name }}</td>
+                <td>{{ coaster.capacity }}</td>
+                <td>{{ coaster.speed }}</td>
+                
+                <td>
+                    <a href="{{ path('app_coaster_show', {'id': coaster.id}) }}">show</a>
+                    <a href="{{ path('app_coaster_edit', {'id': coaster.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_coaster_new') }}">Create new</a>
+{% endblock %}

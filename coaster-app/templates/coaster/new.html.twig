@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Coaster{% endblock %}
+
+{% block body %}
+    <h1>Create new Coaster</h1>
+
+    {{ include('coaster/_form.html.twig') }}
+
+    <a href="{{ path('app_coaster_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Coaster{% endblock %}
+
+{% block body %}
+    <h1>Edit Coaster</h1>
+
+    {{ include('coaster/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_coaster_index') }}">back to list</a>
+
+    {{ include('coaster/_delete_form.html.twig') }}
+{% endblock %}
